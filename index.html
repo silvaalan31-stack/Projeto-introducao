@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b58">
+  <meta name="description" content="Projeto acadêmico demonstrativo de gestão de consultas do Espaço Santa Maria.">
+  <title>Espaço Santa Maria — Gestão de Consultas</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='16' fill='%23176b58'/%3E%3Cpath d='M24 37S9 28 9 18a8 8 0 0 1 15-4 8 8 0 0 1 15 4c0 10-15 19-15 19Z' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M24 18v12M18 24h12' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Espaço Santa Maria, início">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 39S8 29 8 18a8.5 8.5 0 0 1 16-4 8.5 8.5 0 0 1 16 4c0 11-16 21-16 21Z"/><path d="M24 17v14M17 24h14"/></svg>
+      </span>
+      <span class="brand-text"><strong>Espaço Santa Maria</strong><small>Seu tratamento, nossa alegria</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#introducao">Projeto</a><a href="#passo1">1. Sprints</a><a href="#passo2">2. Python</a><a href="#passo3">3. Lógica</a><a href="#passo4">4. Fila</a><a href="#passo5">5. Diagrama</a>
+    </nav>
+    <button class="button button-quiet header-print" data-print>Imprimir</button>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section-wrap" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> PROJETO ACADÊMICO · GESTÃO DE CONSULTAS</p>
+        <h1 id="heroTitle">Cuidar também é <em>organizar.</em></h1>
+        <p class="hero-lede">Uma jornada prática pelos fundamentos de gestão ágil, lógica, algoritmos e modelagem aplicados a uma clínica.</p>
+        <p class="hero-slogan">“Seu tratamento, nossa alegria”</p>
+        <div class="hero-actions"><a class="button button-primary" href="#passo1">Explorar o projeto <span aria-hidden="true">↘</span></a><a class="button button-outline" href="clinica_vida.py" download>Baixar programa Python</a></div>
+        <p class="demo-note"><span aria-hidden="true">ⓘ</span> Demonstração acadêmica com dados fictícios. Não use informações reais de pacientes.</p>
+      </div>
+      <div class="hero-art" aria-label="Ilustração abstrata de cuidado e organização">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card art-card-back"><span class="art-spark">✳</span><span>cuidado</span><i></i><i></i></div>
+        <div class="art-card art-card-front"><span class="art-heart">♡</span><strong>Gestão que acolhe</strong><span>um passo de cada vez</span><div class="art-progress"><b></b></div></div>
+        <div class="art-cross">+</div><div class="art-leaf">✳</div>
+        <div class="hero-art-caption"><span class="caption-line"></span><span>Espaço Santa Maria</span></div>
+      </div>
+      <div class="hero-bottom"><span>01 — 05</span><span>Aprender fazendo</span><span class="hero-bottom-line"></span></div>
+    </section>
+
+    <section class="intro section-wrap" id="introducao">
+      <div class="section-kicker">A PROPOSTA <span>·</span> ESPAÇO SANTA MARIA</div>
+      <div class="intro-grid">
+        <h2>Uma clínica fictícia,<br><em>cinco desafios reais</em><br>de aprendizagem.</h2>
+        <div class="intro-copy"><p>Este projeto acadêmico demonstra como conceitos de tecnologia podem apoiar a organização de uma clínica. Cada etapa combina explicação e elementos interativos para tornar o aprendizado claro, verificável e fácil de apresentar.</p><p>Os exemplos são ilustrativos. O quadro é salvo somente neste navegador e não se conecta a um sistema clínico nem ao Trello.</p><div class="objective-list"><span class="objective-number">OBJETIVOS</span><span>Planejar em sprints</span><span>Praticar Python</span><span>Raciocinar com lógica</span><span>Modelar processos</span></div></div>
+      </div>
+    </section>
+
+    <section class="project-section section-wrap" id="passo1">
+      <div class="section-heading"><div><div class="section-kicker">PASSO 01 <span>·</span> GESTÃO ÁGIL</div><h2>Um quadro para o trabalho<br><em>avançar com clareza.</em></h2></div><p>Organize tarefas por sprint, acompanhe o fluxo e registre o que a equipe aprendeu. Arraste os cartões ou edite o status pelo formulário.</p></div>
+      <div class="toolbar board-toolbar"><div class="control-group"><label for="sprintSelect">Sprint em visualização</label><select id="sprintSelect" aria-label="Selecionar sprint"></select></div><div class="sprint-summary" id="sprintSummary" aria-live="polite"></div><div class="toolbar-actions"><button class="button button-outline" id="editSprint">Editar sprint</button><button class="button button-primary" id="newTask">+ Nova tarefa</button></div></div>
+      <div class="board" id="board" aria-label="Quadro de tarefas Kanban"></div>
+      <div class="board-footnote"><span class="status-dot"></span> Quadro demonstrativo salvo neste navegador. Não é um quadro criado no Trello real. <a href="https://trello.com/" target="_blank" rel="noopener noreferrer">Abrir Trello</a> para criar ou vincular um quadro.</div>
+      <div class="report-panel">
+        <div class="report-heading"><div><div class="section-kicker">FECHAMENTO DE SPRINT</div><h3>Relatório de retrospectiva</h3></div><button class="button button-outline" id="generateReport">Gerar / atualizar relatório</button></div>
+        <div class="report-metrics" id="reportMetrics" aria-live="polite"></div>
+        <div class="report-fields"><label>Resultados alcançados<textarea id="reportResults" rows="3" placeholder="Registre entregas e resultados da sprint."></textarea></label><label>Desafios encontrados<textarea id="reportChallenges" rows="3" placeholder="O que dificultou o andamento?"></textarea></label><label>Pontos positivos<textarea id="reportPositives" rows="3" placeholder="O que funcionou bem na equipe?"></textarea></label><label>Melhorias para a próxima sprint<textarea id="reportImprovements" rows="3" placeholder="Que mudança concreta pode ajudar? "></textarea></label></div>
+        <div class="report-actions"><span id="reportSaved" class="saved-status" aria-live="polite">Relatório demonstrativo</span><button class="button button-quiet" id="exportReport">Exportar relatório (.md)</button><button class="button button-quiet" data-print>Imprimir / salvar em PDF</button></div>
+      </div>
+    </section>
+
+    <section class="project-section section-tint" id="passo2">
+      <div class="section-wrap">
+        <div class="section-heading"><div><div class="section-kicker">PASSO 02 <span>·</span> PROGRAMAÇÃO PYTHON</div><h2>Cadastro simples,<br><em>estatísticas úteis.</em></h2></div><p>O arquivo abaixo é um programa Python de verdade, executado no terminal. Ele usa lista e dicionários — não uma simulação em JavaScript.</p></div>
+        <div class="python-layout"><div class="python-card"><div class="python-card-top"><span class="terminal-dots"><i></i><i></i><i></i></span><span>clinica_vida.py</span><span class="python-badge">PYTHON 3</span></div><div class="terminal-preview" aria-label="Prévia dos comandos do programa"><span class="terminal-muted"># Execute no terminal</span><code>$ python3 clinica_vida.py</code><span class="terminal-muted"># Menu interativo</span><code>1. Cadastrar paciente</code><code>2. Ver estatísticas</code><code>3. Buscar paciente pelo nome</code><code>4. Listar todos os pacientes</code><code>5. Sair</code></div><div class="python-card-bottom"><span>Sem bibliotecas externas</span><a class="button button-light" href="clinica_vida.py" download>Baixar .py <span aria-hidden="true">↓</span></a></div></div>
+          <div class="python-details"><span class="detail-index">01 / 02</span><h3>O que o programa faz</h3><ul class="check-list"><li>Cadastra nome, idade e telefone.</li><li>Calcula total, média de idade e extremos etários.</li><li>Busca pelo nome sem diferenciar maiúsculas ou acentos.</li><li>Valida entradas e trata lista vazia e nomes não encontrados.</li></ul><div class="run-note"><strong>Para executar</strong><p>Baixe o arquivo e rode <code>python3 clinica_vida.py</code> no terminal com Python 3 instalado.</p></div><p class="privacy-note">Os registros ficam apenas na memória durante a execução e não são salvos. Use somente dados fictícios.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section section-wrap" id="passo3">
+      <div class="section-heading"><div><div class="section-kicker">PASSO 03 <span>·</span> LÓGICA PROPOSICIONAL</div><h2>Regras claras,<br><em>decisões verificáveis.</em></h2></div><p>Confira as 16 combinações de cada modalidade. “V” indica verdadeiro e “F”, falso. A tabela é calculada a partir das expressões.</p></div>
+      <div class="logic-definitions"><div><span class="logic-symbol">A</span><span>Tem agendamento</span></div><div><span class="logic-symbol">B</span><span>Documentos válidos</span></div><div><span class="logic-symbol">C</span><span>Médico disponível</span></div><div><span class="logic-symbol">D</span><span>Pagamentos em dia</span></div></div>
+      <div class="formula-grid"><article class="formula-card"><div class="formula-label">CONSULTA NORMAL</div><p class="formula">(A ∧ B ∧ C) ∨ (B ∧ C ∧ D)</p><p>Atendimento liberado se há médico e documentos válidos, além de agendamento ou pagamentos em dia.</p><div class="table-tools"><strong id="normalCount"></strong><button class="text-button" data-export-table="normal">Exportar CSV</button></div><div class="table-scroll"><table id="normalTable"><caption class="sr-only">Tabela-verdade completa para consulta normal</caption><thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>Resultado</th></tr></thead><tbody></tbody></table></div></article>
+        <article class="formula-card"><div class="formula-label">EMERGÊNCIA</div><p class="formula">C ∧ (B ∨ D)</p><p>Atendimento liberado quando há médico disponível e documentos válidos ou pagamentos em dia.</p><div class="table-tools"><strong id="emergencyCount"></strong><button class="text-button" data-export-table="emergency">Exportar CSV</button></div><div class="table-scroll"><table id="emergencyTable"><caption class="sr-only">Tabela-verdade completa para emergência</caption><thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>Resultado</th></tr></thead><tbody></tbody></table></div></article></div>
+      <aside class="case-analysis"><div class="case-icon">∴</div><div><span class="formula-label">ANÁLISE DO CASO</span><h3>A=F, B=V, C=V, D=F</h3><p><strong>Consulta normal: não liberada (F).</strong> A=F e D=F; não há agendamento nem pagamentos em dia, então as duas alternativas da expressão são falsas.</p><p><strong>Emergência: liberada (V).</strong> C=V e B=V; há médico disponível e documentos válidos, então C ∧ (B ∨ D) é verdadeiro.</p></div></aside>
+    </section>
+
+    <section class="project-section section-tint" id="passo4">
+      <div class="section-wrap"><div class="section-heading"><div><div class="section-kicker">PASSO 04 <span>·</span> ESTRUTURA DE DADOS</div><h2>Fila FIFO:<br><em>ordem de chegada.</em></h2></div><p>FIFO significa “primeiro a entrar, primeiro a sair”. A secretária insere os pacientes no fim da fila e o primeiro registro é removido para atendimento.</p></div>
+        <div class="queue-layout"><article class="code-card"><div class="code-card-header"><span>PSEUDOCÓDIGO</span><button class="text-button" id="copyQueue">Copiar pseudocódigo</button></div><pre><code>fila ← fila_vazia
+
+ENFILEIRAR(fila, {nome: "Ana Lima",     CPF: "000.000.000-00"})
+ENFILEIRAR(fila, {nome: "Bruno Reis",   CPF: "111.111.111-11"})
+ENFILEIRAR(fila, {nome: "Carla Nunes",  CPF: "222.222.222-22"})
+
+paciente_atendido ← DESENFILEIRAR(fila)
+
+ESCREVER("Em atendimento: ", paciente_atendido.nome)
+PARA cada paciente EM fila:
+    ESCREVER(paciente.nome, " — ", paciente.CPF)</code></pre></article>
+          <div class="queue-visual"><div class="queue-label"><span>ENTRADA</span><span>SAÍDA</span></div><div class="queue-flow"><div class="queue-patient served"><span class="queue-order">01</span><strong>Ana Lima</strong><small>atendida primeiro</small></div><span class="queue-arrow">→</span><div class="queue-patient"><span class="queue-order">02</span><strong>Bruno Reis</strong><small>permanece na fila</small></div><div class="queue-patient"><span class="queue-order">03</span><strong>Carla Nunes</strong><small>permanece na fila</small></div></div><div class="queue-explanation"><span class="queue-check">✓</span><p><strong>Após a remoção:</strong> Bruno Reis e Carla Nunes permanecem na ordem original.</p></div><p class="fake-data-note">Nomes e CPFs acima são apenas exemplos fictícios de demonstração.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section section-wrap" id="passo5">
+      <div class="section-heading"><div><div class="section-kicker">PASSO 05 <span>·</span> MODELAGEM UML</div><h2>Quem faz o quê?<br><em>O diagrama responde.</em></h2></div><p>Diagrama de casos de uso do sistema de gestão de consultas. As setas tracejadas indicam relações obrigatórias de inclusão (<<include>>).</p></div>
+      <div class="diagram-card"><div class="diagram-head"><div><span class="formula-label">DIAGRAMA DE CASOS DE USO</span><h3>Sistema de gestão de consultas</h3></div><button class="button button-outline" data-print>Imprimir diagrama</button></div>
+        <div class="diagram-scroll"><svg class="usecase-diagram" viewBox="0 0 1040 570" role="img" aria-labelledby="diagramTitle diagramDesc"><title id="diagramTitle">Diagrama UML de casos de uso</title><desc id="diagramDesc">A Secretária cadastra pacientes, agenda, confirma e cancela consultas. O Médico cancela consultas e gera receitas. Agendar, confirmar e gerar receita incluem obrigatoriamente verificar cadastro ou imprimir receita, respectivamente.</desc>
+          <defs><marker id="arrowInclude" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#668178"/></marker></defs>
+          <rect class="system-boundary" x="225" y="43" width="620" height="490" rx="22"/><text class="system-title" x="535" y="78" text-anchor="middle">Sistema de gestão de consultas</text>
+          <g class="actor" transform="translate(85 215)"><circle cx="0" cy="0" r="18"/><path d="M0 18v62M-27 42h54M0 80l-24 43M0 80l24 43"/><text x="0" y="152" text-anchor="middle">Secretária</text></g>
+          <g class="actor" transform="translate(950 215)"><circle cx="0" cy="0" r="18"/><path d="M0 18v62M-27 42h54M0 80l-24 43M0 80l24 43"/><text x="0" y="152" text-anchor="middle">Médico</text></g>
+          <g class="associations"><path d="M112 244 C175 200 233 159 323 147"/><path d="M112 250 C200 232 244 224 323 221"/><path d="M112 257 C200 276 245 294 323 295"/><path d="M112 267 C220 315 345 186 587 147"/><path d="M928 246 C858 200 806 160 747 147"/><path d="M928 258 C850 240 800 221 747 221"/></g>
+          <g class="includes"><path d="M412 239 C430 329 470 379 518 412" marker-end="url(#arrowInclude)"/><path d="M412 312 C445 362 473 391 518 420" marker-end="url(#arrowInclude)"/><path d="M679 239 C680 267 680 278 680 293" marker-end="url(#arrowInclude)"/><text x="443" y="343">&lt;&lt;include&gt;&gt;</text><text x="500" y="390">&lt;&lt;include&gt;&gt;</text><text x="688" y="278">&lt;&lt;include&gt;&gt;</text></g>
+          <g class="usecase"><ellipse cx="370" cy="147" rx="102" ry="31"/><text x="370" y="152">Cadastrar paciente</text></g>
+          <g class="usecase"><ellipse cx="370" cy="221" rx="102" ry="31"/><text x="370" y="226">Agendar consulta</text></g>
+          <g class="usecase"><ellipse cx="370" cy="295" rx="102" ry="31"/><text x="370" y="300">Confirmar consulta</text></g>
+          <g class="usecase"><ellipse cx="680" cy="147" rx="102" ry="31"/><text x="680" y="152">Cancelar consulta</text></g>
+          <g class="usecase"><ellipse cx="680" cy="221" rx="102" ry="31"/><text x="680" y="226">Gerar receita</text></g>
+          <g class="usecase"><ellipse cx="680" cy="310" rx="102" ry="31"/><text x="680" y="315">Imprimir receita</text></g>
+          <g class="usecase included"><ellipse cx="570" cy="434" rx="132" ry="34"/><text x="570" y="439">Verificar cadastro do paciente</text></g>
+          <g class="legend"><path d="M292 505h62"/><text x="364" y="510">Associação</text><path class="legend-dash" d="M485 505h62" marker-end="url(#arrowInclude)"/><text x="558" y="510">Inclusão obrigatória</text></g>
+        </svg></div><p class="diagram-note">Limite do sistema representado pelo retângulo. Foram incluídos apenas os dois atores e os casos de uso definidos na atividade.</p></div>
+    </section>
+
+    <section class="closing section-wrap" id="conclusao"><div class="closing-mark">✳</div><div class="section-kicker">CONCLUSÃO</div><h2>Organizar processos também<br>é uma forma de <em>cuidar.</em></h2><p>Os cinco passos mostram como planejamento, programação e modelagem ajudam a descrever fluxos de trabalho. Em um contexto real de saúde, qualquer sistema deve ser desenvolvido com validação profissional, segurança e proteção de dados — esta demonstração não substitui um sistema clínico.</p><a class="button button-primary" href="#inicio">Voltar ao início ↑</a></section>
+  </main>
+  <footer class="site-footer" id="referencias"><div><a class="footer-brand" href="#inicio">Espaço Santa Maria</a><p>“Seu tratamento, nossa alegria”</p></div><div class="footer-links"><a href="#passo1">Quadro de sprints</a><a href="#passo2">Python</a><a href="#passo3">Lógica</a><a href="#passo4">Fila FIFO</a><a href="#passo5">Diagrama UML</a></div><div class="references"><strong>Referências e ferramentas</strong><span>Python 3 · GitHub Pages · Trello (referência visual) · Lógica proposicional · UML / casos de uso</span><small>Projeto acadêmico demonstrativo. Nenhum dado real de paciente.</small></div></footer>
+
+  <dialog class="edit-dialog" id="taskDialog"><form method="dialog" id="taskForm"><div class="dialog-top"><div><div class="section-kicker">QUADRO DE TAREFAS</div><h2 id="taskDialogTitle">Nova tarefa</h2></div><button class="icon-button" value="cancel" aria-label="Fechar">×</button></div><input type="hidden" id="taskId"><label>Título<input id="taskTitle" required maxlength="100"></label><label>Descrição<textarea id="taskDescription" rows="3" maxlength="500"></textarea></label><div class="form-row"><label>Sprint<select id="taskSprint"></select></label><label>Lista<select id="taskLane"><option value="backlog">Backlog</option><option value="current">Sprint Atual</option><option value="progress">Em Progresso</option><option value="done">Concluído</option></select></label></div><label>Data da tarefa<input type="date" id="taskDue"></label><label>Checklist (uma tarefa por linha)<textarea id="taskChecklist" rows="4" placeholder="Ex.: Revisar requisitos"></textarea></label><label>Comentários / observações<textarea id="taskComments" rows="3" placeholder="Anotações da equipe"></textarea></label><div class="dialog-actions"><button type="button" class="button button-quiet" id="deleteTask">Excluir tarefa</button><span></span><button type="button" class="button button-outline" data-close-dialog>Cancelar</button><button type="submit" class="button button-primary">Salvar tarefa</button></div></form></dialog>
+  <dialog class="edit-dialog" id="sprintDialog"><form method="dialog" id="sprintForm"><div class="dialog-top"><div><div class="section-kicker">PLANEJAMENTO</div><h2 id="sprintDialogTitle">Editar sprint</h2></div><button class="icon-button" value="cancel" aria-label="Fechar">×</button></div><input type="hidden" id="sprintId"><label>Nome da sprint<input id="sprintName" required maxlength="80"></label><label>Objetivo<textarea id="sprintGoal" rows="3" required maxlength="300"></textarea></label><div class="form-row"><label>Data de início<input type="date" id="sprintStart" required></label><label>Data de término<input type="date" id="sprintEnd" required></label></div><div class="dialog-actions"><span></span><button type="button" class="button button-outline" data-close-dialog>Cancelar</button><button type="submit" class="button button-primary">Salvar sprint</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
